@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+// Dopolni kod ovde
+
+$("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1) //ako ne postoi vraka -1
+    });
+  });
+
+$("li").mouseenter(function(){
+    $(this).css("background-color", "green");
+  });
+$("li").mouseleave(function(){
+    $(this).css("background-color", "white");
+  });
+
+
+$("li").click(function(){
+  var tekst=$(this).attr("org");
+
+  if($(this).text() == tekst){
+    $(this).text("Кликнат !");
+  }else{
+    $(this).text(tekst);
+  }
+
+})
+
+});
+
+</script>
+</head>
+<body>
+
+<h2>Филтирачка листа</h2>
+<p>Внеси нешто во input полето  за да се пребараат излистаните елементи:</p>  
+<input id="myInput" type="text" placeholder="Search..">
+<br>
+
+<ul id="myList">
+  <li org="Втор">Втор</li>
+  <li org="Колоквиум">Колоквиум</li>
+  <li org="OWEB">OWEB</li>
+  <li org="25.1.2021">25.1.2021</li>
+  <li org="jquery">jquery</li>
+</ul>
+  
+</body>
+</html>
+
