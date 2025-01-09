@@ -1,0 +1,17 @@
+<div class="top-menu">
+
+    <img class="logo"
+         src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Rolling_Stone_2019.svg/360px-Rolling_Stone_2019.svg.png">
+
+</div>
+
+<div class="courses">
+ 
+    <artist-comp *ngFor="let artist of artistList; index as i; even as par; odd as nepar"
+    [artist]="artist" 
+    [indeks]="i+1"
+    [class.is-even]="par"
+    [class.is-odd]="nepar"></artist-comp>
+    <!-- is-even i is-odd gi ima vo styles.css, nekoj prasha deka treba sami da gi kreirame,
+    no jas e startuvav aplikacijava i gi oboi ednoto rozevo, drugoto plavo-->
+</div>
